@@ -5,7 +5,6 @@ ENV LANG C.UTF-8
 
 VOLUME /config
 VOLUME /recordings
-VOLUME /usr/local/bin/tvmosaic
 EXPOSE 9270 9271
 
 RUN apt-get update
