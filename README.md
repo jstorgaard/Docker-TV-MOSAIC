@@ -20,15 +20,14 @@ Currently the volumes are:
 
 * `/recordings` - Recordings folder. You might have to point it here. **Required**
 * `/opt/Mosaic` - Where all xmltv, transponders, playlists etc is located. **Required**
-* `/usr/local/bin/mosaic` - Config folder. **Required**
+* `/usr/local/bin/tvmosaic` - Config folder. **Required**
 
 ## Ports
 
 It's recommended to run the docker with `--net=host` to be able to use IPTV without issues.
 
-* `22` - SSH Port.
-* `39876` - TV MOSAIC config port.
-* `8100` - TV MOSAIC tvguide port.
+* `9070` - TV MOSAIC port.
+* `9071` - TV MOSAIC port.
 
 ## Info
 
