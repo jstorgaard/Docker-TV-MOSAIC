@@ -19,6 +19,8 @@ ADD /etc/supervisor/conf.d/supervisord.conf /etc/supervisor/conf.d/supervisord.c
 
 ADD /etc/init.d/mosaic.sh /etc/init.d/mosaic.sh
 RUN chmod +x /etc/init.d/mosaic.sh
+
+RUN mkdir /opt-start && mv /usr/local/bin/tvmosaic /opt-start && mv /opt/TVMosaic /opt-start
     
 ENTRYPOINT ["/usr/bin/supervisord"]
 CMD ["-c", "/etc/supervisor/conf.d/supervisord.conf"]
