@@ -31,4 +31,4 @@ It's recommended to run the docker with `--net=host` to be able to use IPTV with
 
 ## Info
 
-Read more at http://dvblogic.com
+Read more at http://http://tv-mosaic.com
