@@ -1,12 +1,12 @@
 #!/bin/bash
 
-chmod -R /opt/tvmosaiv
-chmod -R /usr/local/bin/tvmosaic
+chmod -R 777 /opt/TVMosaiv
+chmod -R 777 /usr/local/bin/tvmosaic
 chmod -R 777 /opt-start/TVMosaic
 chmod -R 777 /opt-start/tvmosaic
 
 
-if [ -z "`la /usr/local/bin/tvmosaic --hide='lost+found'`" ]
+if [ -z "`ls /usr/local/bin/tvmosaic --hide='lost+found'`" ]
 then
     cp -R /opt-start/tvmosaic/* /usr/local/bin/tvmosaic
 fi
