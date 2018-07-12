@@ -1,6 +1,6 @@
 #!/bin/bash
 
-chmod -R 777 /opt/TVMosaiv
+chmod -R 777 /opt/TVMosaic
 chmod -R 777 /usr/local/bin/tvmosaic
 chmod -R 777 /opt-start/TVMosaic
 chmod -R 777 /opt-start/tvmosaic
