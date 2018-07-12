@@ -30,7 +30,7 @@ It's recommended to run the docker with `--net=host` to be able to use IPTV with
 * `9271` - TV MOSAIC port.
 
 ## Example
-Eksample command line:
+Example command line:
 docker run -it --name=tvmosaic --net=host -p 9270:9270 -p 9271:9271 -v /opt/tvmosaic:/opt/TVMosaic -v /mnt/recordings:/recordings jepsh/docker-tv-mosaic
 
 ## Info
