@@ -5,7 +5,7 @@ ENV LANG C.UTF-8
 
 # RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 # RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y wget dbus dbus-x11 gconf2 supervisor htop nano procps lsof libgtk2.0 tzdata
-RUN apk add --no-cache wget dbus dbus-x11 gconf2 supervisor htop nano procps lsof libgtk2.0 tzdata
+RUN apk add --no-cache wget dbus dbus-x11 gconf supervisor htop nano procps lsof tzdata
 RUN wget -nv http://tv-mosaic.com/download/624e68fb8cfab4ce8d277d4a416af741 -O tvmosaic.deb && \
     dpkg -i tvmosaic.deb && rm tvmosaic.deb
     
@@ -24,5 +24,7 @@ RUN mkdir /opt-start && mv /usr/local/bin/tvmosaic /opt-start && mv /opt/TVMosai
 VOLUME [ "/opt/TVMosaic", "/recordings", "/usr/local/bin/tvmosaic" ]
 EXPOSE 9270 9271
 
-ENTRYPOINT ["/usr/bin/supervisord"]
-CMD ["-c", "/etc/supervisor/conf.d/supervisord.conf"]
+#ENTRYPOINT ["/usr/bin/supervisord"]
+ENTRYPOINT ["/etc/init.d/tvmosaic"]
+#CMD ["-c", "/etc/supervisor/conf.d/supervisord.conf"]
+CMD ["start"]
