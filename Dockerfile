@@ -1,16 +1,15 @@
-FROM alpine:3.8
+FROM ubuntu:latest
 MAINTAINER jstorgaard
 
 ENV LANG C.UTF-8
 
 # RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
-# RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y wget dbus dbus-x11 gconf2 supervisor htop nano procps lsof libgtk2.0 tzdata
-RUN apk add --no-cache wget dbus dbus-x11 gconf supervisor htop nano procps lsof tzdata dpkg
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y wget dbus dbus-x11 gconf2 supervisor htop nano procps lsof libgtk2.0 tzdata
 RUN wget -nv http://tv-mosaic.com/download/624e68fb8cfab4ce8d277d4a416af741 -O tvmosaic.deb && \
     dpkg -i tvmosaic.deb && rm tvmosaic.deb
     
 # Clean up APT when done.
-#RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /var/log/supervisord
 RUN mkdir /var/run/dbus
