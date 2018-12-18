@@ -4,7 +4,7 @@ LABEL maintainer="jstorgaard"
 ENV LANG C.UTF-8
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends apt-utils
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y wget dbus dbus-x11 gconf2 supervisor htop nano procps lsof libgtk2.0 tzdata
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y wget dbus dbus-x11 gconf2 supervisor htop nano procps lsof tzdata
 RUN wget -nv http://tv-mosaic.com/download/624e68fb8cfab4ce8d277d4a416af741 -O tvmosaic.deb && \
     dpkg -i tvmosaic.deb && rm tvmosaic.deb
     
